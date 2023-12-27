@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <script>
+        function isPalidrome()
+        {
+            var n = document.getElementById("num").value;
+            
+            var num = parseInt(n);
+            var rev = 0;
+            var r = 0;
+            while(num >0)
+            {
+                
+                r = num % 10;
+                console.log("r : " +r);
+                rev = (rev*10) + r;
+
+                num = Math.floor(num/10);
+                console.log("num : " +num);
+            }
+            console.log(rev);
+            if(n==rev)
+            {
+                document.getElementById("mydiv").innerHTML="Palidrome";
+            }else{
+                document.getElementById("mydiv").innerHTML="Not Palidrome";
+            }
+        }
+    </script>
+    
+    </head>
+    <body>
+        <input type="text" id="num">
+        <button onclick="isPalidrome()">Check Palindrome</button>
+        <div id="mydiv"></div>
+    </body>
+</html>
